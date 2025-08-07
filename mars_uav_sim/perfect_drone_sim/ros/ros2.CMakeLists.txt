@@ -31,6 +31,7 @@ find_package(visualization_msgs REQUIRED)
 find_package(marsim_render REQUIRED)
 find_package(mars_quadrotor_msgs REQUIRED)
 find_package(tf2_ros REQUIRED)
+find_package(pcl_conversions REQUIRED)
 
 # Other packages
 find_package(Eigen3 REQUIRED)
@@ -63,6 +64,7 @@ set(dependencies
         nav_msgs
         visualization_msgs
         tf2_ros
+        pcl_conversions
 )
 
 add_executable(perfect_drone_node

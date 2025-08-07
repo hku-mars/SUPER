@@ -12,6 +12,7 @@
     <depend>std_msgs</depend>
     <depend>mars_quadrotor_msgs</depend>
     <depend>marsim_render</depend>
+    <depend>pcl_conversions</depend>
     <export>
         <build_type>ament_cmake</build_type>
     </export>
