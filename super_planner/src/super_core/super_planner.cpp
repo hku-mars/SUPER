@@ -347,13 +347,13 @@ namespace super_planner {
         yaw = cmd_traj_info_.getYaw((eval_t))[0];
         yaw_dot = cmd_traj_info_.getYawRate((eval_t))[0];
 
-        if (isnan(yaw)) {
+        if (std::isnan(yaw)) {
             yaw = last_yaw;
             yaw_dot = 0;
         } else {
             last_yaw = yaw;
         }
-        if (isnan(yaw_dot)) {
+        if (std::isnan(yaw_dot)) {
             yaw_dot = 0;
         }
 
@@ -791,7 +791,7 @@ namespace super_planner {
 
 
         bool free_end{true};
-        if (cfg_.goal_yaw_en && !isnan(gi_.goal_yaw) && connected_goal) {
+        if (cfg_.goal_yaw_en && !std::isnan(gi_.goal_yaw) && connected_goal) {
             free_end = false;
             fina_yaw[0] = gi_.goal_yaw;
         }
@@ -1044,7 +1044,7 @@ namespace super_planner {
             Vec4f yaw_goal{0, 0, 0, 0};
             bool free_end{true};
             if (cfg_.goal_yaw_en) {
-                if (!isnan(gi_.goal_yaw)) {
+                if (!std::isnan(gi_.goal_yaw)) {
                     free_end = false;
                     yaw_goal[0] = gi_.goal_yaw;
                 }

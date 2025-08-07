@@ -202,7 +202,7 @@ namespace fsm {
         }
 
         if (cfg_.click_yaw_en) {
-            if (isnan(q.w()) || isnan(q.x()) || isnan(q.y()) || isnan(q.z())) {
+            if (std::isnan(q.w()) || std::isnan(q.x()) || std::isnan(q.y()) || std::isnan(q.z())) {
                 gi_.goal_yaw = NAN;
                 ros_ptr_->info(" -- [Fsm] Receive click goal at: [{}, {}, {}]; goal yaw disabled",
                                gi_.goal_p.x(), gi_.goal_p.y(), gi_.goal_p.z());
